@@ -1,0 +1,13 @@
+-
+  hosts: Ansible-Client
+  become: true
+  remote_user: root
+  tasks:
+    - name: httpd installation
+      yum:
+        name: httpd
+        state: present
+    - name: Start Apache
+      service:
+        name: httpd
+        state: started
